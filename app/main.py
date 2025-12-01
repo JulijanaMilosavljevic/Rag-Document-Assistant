@@ -2,7 +2,8 @@
 
 import streamlit as st
 from pathlib import Path
-
+ROOT = Path(__file__).parent.parent
+sys.path.append(str(ROOT))
 from backend.rag_pipeline import RagPipeline
 from app.config import APP_TITLE, APP_DESCRIPTION
 
