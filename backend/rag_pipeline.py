@@ -38,7 +38,7 @@ class RagPipeline:
         if not api_key:
             raise RuntimeError("GROQ_API_KEY nije definisan u okruženju.")
 
-        self.llm = Groq(api_key=api_key)
+        self.llm = Groq(api_key=api_key, http_client=None)
 
     # ---------------------------------------
     # RESET PIPELINE
