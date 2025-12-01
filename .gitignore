@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+models/index/
+models/embeddings/
+data/processed/
+.env
+.DS_Store
+.env
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+
+# Virtualenv
+venv/
+.env/
+
+# Streamlit
+.streamlit/
+
+# VSCode
+.vscode/
