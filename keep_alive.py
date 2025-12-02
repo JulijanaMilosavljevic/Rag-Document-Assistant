@@ -2,13 +2,15 @@ import threading
 import time
 import requests
 import subprocess
+import os
 from flask import Flask
 
+# Flask ping server (NE na glavnom portu!)
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return "Backend alive"
+    return "alive"
 
 def ping():
     url = "https://rag-document-assistant-gt.onrender.com"
@@ -26,10 +28,12 @@ def start_ping():
     t.start()
 
 def start_streamlit():
-    # Pokreće Streamlit app paralelno
+    port = os.environ.get("PORT", "10000")
+    print("Starting Streamlit on port", port)
+
     cmd = [
         "streamlit", "run", "app/main.py",
-        "--server.port=10000",
+        f"--server.port={port}",
         "--server.address=0.0.0.0"
     ]
     subprocess.Popen(cmd)
@@ -37,4 +41,5 @@ def start_streamlit():
 if __name__ == "__main__":
     start_ping()
     start_streamlit()
-    app.run(host="0.0.0.0", port=10000)
+    # Flask IDE na drugom portu da ne smeta Streamlitu
+    app.run(host="0.0.0.0", port=8080)
