@@ -5,6 +5,8 @@ pypdf==3.17.4
 python-dotenv==1.0.0
 
 # Groq FIX
-groq==0.7.0
+flask
+requests
 httpx==0.24.1
-requests==2.31.0
+groq==0.7.0
+
