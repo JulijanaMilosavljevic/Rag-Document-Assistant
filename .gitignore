@@ -17,8 +17,5 @@ __pycache__/
 venv/
 .env/
 
-# Streamlit
-.streamlit/
-
 # VSCode
 .vscode/
