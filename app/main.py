@@ -102,8 +102,8 @@ left, right = st.columns([2, 1])
 
 with left:
     with st.container():
-        st.markdown("<div class='section-label'>Interakcija</div>", unsafe_allow_html=True, key="lbl_interakcija")
-        st.markdown("### 💬 Postavi pitanje dokumentima", key="ask_header")
+        st.markdown("<div class='section-label'>Interakcija</div>", unsafe_allow_html=True)
+        st.markdown("### 💬 Postavi pitanje dokumentima")
     def save_question():
      st.session_state["question_value"] = st.session_state["question_input"]
     question = st.text_input(
